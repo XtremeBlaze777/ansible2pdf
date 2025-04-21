@@ -1,0 +1,65 @@
+all:
+  vars:
+    default_users:
+    - user
+    default_admins:
+    - admin
+    default_password: 'password'
+
+
+nix:
+  hosts:
+    user1:
+      ansible_host: 192.168.0.2
+      os: Kali
+    user2:
+      ansible_host: 192.168.0.3
+      os: Kali
+    user3:
+      ansible_host: 192.168.0.4
+      os: Kali
+    user4:
+      ansible_host: 192.168.0.5
+      os: Kali
+    user5:
+      ansible_host: 192.168.0.6
+      os: Kali
+    user6:
+      ansible_host: 192.168.0.7
+      os: Kali
+    extra1:
+      ansible_host: 192.168.0.8
+      os: Windows Server 2022
+    extra2:
+      ansible_host: 192.168.0.9
+      os: Windows 10
+    control:
+      ansible_host: 192.168.0.10
+      os: Debian 10
+    staging:
+      ansible_host: 192.168.0.11
+      os: Debian 10
+
+windows:
+  vars:
+    ansible_user: Administrator
+    ansible_password: '{{ default_password }}'
+
+    ansible_connection: winrm
+    ansible_winrm_transport: ntlm
+    ansible_port: 5985
+    ansible_winrm_server_cert_validation: ignore
+  hosts:
+    dc:
+      ansible_host: 192.168.0.12
+    windows:
+      ansible_host: 192.168.0.13
+
+domaincontroller:
+  hosts:
+    dc:
+
+rdp:
+  hosts:
+    dc:
+    windows:

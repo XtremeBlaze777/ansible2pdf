@@ -1,0 +1,11 @@
+# generated outputs
+*.html
+*.pdf
+*.png
+*gpt.*
+*.yaml*
+*.yml*
+!*example*
+
+# temporary files
+*nx*

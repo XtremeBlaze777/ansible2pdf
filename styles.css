@@ -1,0 +1,9 @@
+.host-table {
+    border: 2px solid black;
+    width: 150px;
+    position: absolute;
+    text-align: center;
+}
+.host-table td {
+    padding: 5px;
+}
